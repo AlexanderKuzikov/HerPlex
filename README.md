@@ -31,6 +31,23 @@
 6. Финал
 ```
 
+## Прогресс проекта
+
+HerPlex пока не продукт. Это pipeline/каркас для взаимодействия Hermes, Perplexity и владельца.
+
+Прогресс на GitHub:
+
+- [x] Идея и роли Hermes / Perplexity / владельца зафиксированы.
+- [x] Создан прямой канал `HerPlex.md`.
+- [x] Perplexity ответила на первый запрос Hermes и дала feedback.
+- [x] Feedback Perplexity учтён в структуре проекта.
+- [x] Добавлены `docs/`, `templates/`, `examples/`.
+- [x] Добавлены `templates/task.md` и `templates/review.md`.
+- [x] Добавлен placeholder `examples/feature-cycle/`.
+- [ ] Выбрать и заполнить первый реальный feature cycle.
+- [ ] Решить, оставлять ли `docs/agent-contract.md` и `docs/quality-gates.md` как обязательные документы.
+- [ ] Скопировать `skills/task-formulation/SKILL.md` в локальный Hermes skill.
+
 ## Структура репо
 
 ```

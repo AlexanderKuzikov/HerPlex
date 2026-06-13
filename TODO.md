@@ -11,6 +11,9 @@
 - [x] Обновить README/CONTEXT/PERPLEXITY под новый канал
 - [x] Добавить минимальную структуру `docs/`, `templates/`, `examples/`
 - [x] Добавить `docs/agent-contract.md` и `docs/quality-gates.md`
+- [x] Обновить README прогрессом проекта на GitHub
+- [ ] Perplexity: ответить на P-001 в `HerPlex.md`
+- [ ] Hermes: выполнить конкретное задание Perplexity из P-001
 - [ ] Дождаться ответа Perplexity в `HerPlex.md`
 - [ ] Принять решение владельцем в `HerPlex.md`
 - [ ] Заполнить первый реальный `examples/feature-cycle/01-spec.md`, `02-prompt.md`, `03-review.md`
