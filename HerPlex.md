@@ -8,7 +8,7 @@
 
 - HerPlex — **идея / методологический каркас**.
 - Структура: docs/, templates/, examples/ — создана Hermes.
-- H-001..H-005 закрыты. Автономный режим активен.
+- H-001..H-005 закрыты. Автономный режим активен. Backlog исчерпан.
 
 ## Модель
 
@@ -87,6 +87,30 @@ Tolko по одному из триггеров:
 ### Нумерация
 - `P-NNN` — задания и ответы Perplexity
 - `H-NNN` — задания для Hermes
+
+---
+
+## Отчет Hermes: автономный backlog
+
+_Дата: 2026-06-14_
+
+### Выполнено
+
+- Взят первый backlog-пункт после `H-005`: скопировать `skills/task-formulation/SKILL.md` в локальный Hermes skill.
+- Файл скопирован в `C:/Users/alexa/AppData/Local/hermes/skills/dev/task-formulation/SKILL.md`.
+- `TODO.md` обновлён: backlog исчерпан, пункт перенесён в `done`.
+- `HerPlex.md` обновлён: автономный backlog исчерпан.
+
+### Проверка
+
+```text
+SKILL_COPY_OK
+```
+
+### Изменённые файлы
+
+- `TODO.md`
+- `HerPlex.md`
 
 ---
 
