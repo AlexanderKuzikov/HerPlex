@@ -1,65 +1,35 @@
-# Review Template
+# Review
 
-Используй этот шаблон для review от Perplexity или Hermes.
-
-```md
-# Review: [task / commit / PR]
-
-## Context
-
-Что проверяем.
-
-## Verdict
-
-- [ ] Accept
-- [ ] Accept with minor changes
-- [ ] Request changes
-- [ ] Blocked
-
-## Correctness
-
-Что работает / что не работает.
-
-## Edge cases
-
-Непроверенные или рискованные сценарии.
-
-## Security
-
-- [ ] Нет секретов
-- [ ] Нет path traversal
-- [ ] Нет unsafe input handling
-- [ ] Нет опасных side effects
-
-## Architecture fit
-
-Соответствие текущей архитектуре и ограничениям.
-
-## Testing
-
-Что покрыто и чего не хватает.
+Коммит (URL): [commit URL]
+Дата: YYYY-MM-DD
+PR/Task: [PR URL / H-NNN]
 
 ## Blocking issues
 
-Критичные проблемы.
+- [ ] Example: security issue, data loss, broken main, impossible acceptance criteria.
 
 ## Warnings
 
-Проблемы, которые желательно исправить до merge/accept.
+- [ ] Example: risky edge case, unclear ownership, missing migration note.
 
 ## Suggestions
 
-Неблокирующие улучшения.
+- [ ] Example: clearer naming, smaller diff, better docs.
 
 ## Verified
 
-Что было проверено явно.
+- [ ] Example: file opened from GitHub; acceptance criteria checked.
+- [ ] Example: git diff reviewed; no unrelated files changed.
 
 ## Not verified
 
-Что не проверялось.
+- [ ] Example: runtime behavior not tested because this task is docs-only.
+- [ ] Example: browser rendering not checked.
 
 ## Decision
 
-Принятое решение и следующий шаг.
-```
+- [ ] Accept / Accept with minor changes / Request changes / Blocked
+
+## Next step
+
+[One concrete next action, or "none".]
