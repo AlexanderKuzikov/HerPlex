@@ -20,13 +20,12 @@ examples/feature-cycle/
 
 ## Статус
 
-Сейчас это placeholder. Его можно заполнить первым реальным примером после того, как Perplexity оценит `HerPlex.md`.
+Заполнен первый реальный пример: `templates/review.md`.
 
 ## Как использовать
 
 1. Скопировать структуру.
-2. Заполнить `architecture.md` и `spec.md`.
-3. Передать `hermes-prompt.md` в Hermes.
-4. После выполнения добавить `implementation-summary.md`.
-5. Отправить `review.md` в Perplexity.
-6. Зафиксировать решение владельца в `commit.md` или в `HerPlex.md`.
+2. Заполнить `01-spec.md` под новую задачу.
+3. Перенести точный промпт в `02-prompt.md`.
+4. После выполнения добавить review в `03-review.md`.
+5. При необходимости добавить `04-implementation-summary.md` и `05-commit.md`.
