@@ -14,7 +14,7 @@
 ## Модель
 
 ```text
-Perplexity / Claude Sonnet 4.6 → архитектура, ТЗ, review, оценка идей
+Perplexity / Claude Sonnet 4.6 → архитектура, ТЗ, review, оценка идей, формулировка промптов для Hermes
 Hermes / Nex N2 Pro → анализ, реализация, рутина, фиксы, документация
 Владелец проекта → точка принятия решений
 GitHub → общий контекст, audit trail, канал между агентами
@@ -24,7 +24,7 @@ GitHub → общий контекст, audit trail, канал между аг�
 
 ### Короткий вердикт
 
-HerPlex — хорошая заготовка для персонального multi-agent workflow. Сильная часть — разделение ролей и правила формулировки задач, которые снижают риск `agentic spiral`. Слабая часть — отсутствие реального продукта, quality gates и примеров полного цикла.
+HerPlex — хорошая заготовка для персонального multi-agent workflow. Сильная часть — разделение ролей и правила формулировки задач, которые снижают риск агентического spiral. Слабая часть — отсутствие реального продукта, quality gates и примеров полного цикла.
 
 ### Текущая зрелость
 
@@ -35,110 +35,42 @@ HerPlex — хорошая заготовка для персонального 
 ## Что уже хорошо
 
 1. **Роли агентов разделены правильно**
-   - Perplexity/Claude — архитектура, ТЗ, review.
-   - Hermes — реализация и рутина.
-   - Человек — decision point.
-
-2. **Есть защита от размытых задач**
-   - `Task`
-   - `Modify`
-   - `Read for context`
-   - `Acceptance criteria`
-   - `Do NOT`
-   - `Stop after`
-
-3. **GitHub как контекстная шина — здравая идея**
-   - ссылки на файлы;
-   - ссылки на коммиты;
-   - compare-диффы;
-   - audit trail между сессиями и агентами.
-
+2. **Есть защита от размытых задач** (шаблон с Task/Modify/Acceptance criteria/Do NOT/Stop after)
+3. **GitHub как контекстная шина** — здравая идея
 4. **`AGENTS.md` задаёт полезные engineering rules**
-   - функции до 40 строк;
-   - избегать `any`;
-   - typed throws;
-   - комментарии объясняют “почему”, а не “что”.
-
 5. **Секретов в tracked files не найдено**
-   - password/api_key/token-подобных значений в коде/доках не обнаружено.
 
 ## Риски и замечания
 
-1. **Репозиторий не является продуктом**
-   - нет runtime;
-   - нет CLI;
-   - нет API;
-   - нет тестов;
-   - нет CI;
-   - нет примера полного feature cycle.
-
-2. **`AGENTS.md` утверждает, что Hermes читает его автоматически**
-   - это зависит от окружения;
-   - лучше явно проверить или документировать условие активации.
-
-3. **Нет quality gate**
-   - нет `npm test`;
-   - нет typecheck;
-   - нет lint;
-   - нет GitHub Actions;
-   - нет PR/issue templates.
-
-4. **`TODO.md` пока пустой**
-   - плоский TODO может быстро стать ручным хаосом;
-   - нужны статусы: backlog, ready, in progress, blocked, done.
-
-5. **Branch protection/rulesets не подтверждены**
-   - workflows: 0;
-   - rulesets: пусто;
-   - branch protection endpoint требует auth;
-   - если репо важно, нужно явно настроить защиту `main`.
-
-6. **Бэйджи**
-   - владелец подтвердил: бэйджи — личная прихоть, не считать misleading.
-   - не менять без отдельной просьбы.
+1. Репозиторий не является продуктом (runtime, CLI, API, тесты, CI отсутствуют)
+2. Авточтение `AGENTS.md` зависит от окружения — нужно явно проверить условие активации
+3. Нет quality gate (тесты, typecheck, lint, CI)
+4. `TODO.md` пустой, плоский формат быстро станет хаосом
+5. Branch protection не подтверждён
+6. Бэджи — личная прихоть владельца, не менять без отдельной просьбы
 
 ## Предложения по документации
 
-1. Добавить `docs/pipeline.md` — полное описание цикла от идеи до accepted task.
-2. Добавить `templates/task.md` — шаблон задачи для Hermes.
-3. Добавить `templates/review.md` — шаблон review для Perplexity.
-4. Добавить `examples/feature-cycle/` — один полный пример.
-5. Добавить `docs/agent-contract.md` — контракт Hermes/Perplexity/человек.
-6. Добавить `docs/quality-gates.md` — проверки для будущего кода.
-7. Разбить `CONTEXT.md` на тематические документы, когда он станет слишком большим.
+1. Добавить `docs/pipeline.md` — полное описание цикла от идеи до accepted task
+2. Добавить `templates/task.md` — шаблон задачи для Hermes
+3. Добавить `templates/review.md` — шаблон review для Perplexity
+4. Добавить `examples/feature-cycle/` — один полный пример
+5. Добавить `docs/agent-contract.md` — контракт Hermes/Perplexity/человек
+6. Добавить `docs/quality-gates.md` — проверки для будущего кода
+7. Разбить `CONTEXT.md` на тематические документы, когда он станет слишком большим
 
 ## Предложения по процессу
 
-1. Каждый промпт для Hermes сохранять как артефакт.
+1. Каждый промпт для Hermes сохранять как артефакт
 2. Каждый review от Perplexity сохранять структурированно:
-   - blocking issues;
-   - warnings;
-   - suggestions;
-   - verified;
-   - not verified.
-3. Критичные действия вынести в human approval gates:
-   - push;
-   - install dependencies;
-   - secrets;
-   - migrations;
-   - infra changes;
-   - public docs changes.
-4. Вести session log:
-   - session_id;
-   - model;
-   - agent;
-   - started_at;
-   - ended_at;
-   - tool_calls;
-   - outcome;
-   - next_action.
-5. Добавить recovery protocol:
-   - Hermes зациклился;
-   - Perplexity дал противоречивый ответ;
-   - GitHub API недоступен;
-   - модель недоступна;
-   - задача оказалась слишком большой;
-   - агент внёс изменения вне scope.
+   - blocking issues
+   - warnings
+   - suggestions
+   - verified
+   - not verified
+3. Критичные действия — human approval gates (push, install deps, secrets, migrations)
+4. Session log (session_id, model, agent, tool_calls, outcome, next_action)
+5. Recovery protocol (зацикливание, противоречие, задача вышла за scope)
 
 ## Предложения по архитектуре, если HerPlex станет продуктом
 
@@ -157,36 +89,13 @@ herplex/
   tests/
 ```
 
-Базовые сущности:
-
-```text
-Task
-Session
-AgentRole
-Artifact
-Review
-Decision
-QualityGate
-```
+Базовые сущности: Task, Session, AgentRole, Artifact, Review, Decision, QualityGate
 
 State machine:
-
 ```text
 draft → spec-ready → implementing → implemented → reviewed → accepted → done
-                         ↓
-                       blocked
-```
-
-Артефакты:
-
-```text
-architecture.md
-spec.md
-prompt.md
-implementation-summary.md
-review.md
-test-results.md
-commit.md
+                           ↓
+                         blocked
 ```
 
 ## Запрос Hermes к Perplexity
@@ -202,7 +111,50 @@ Perplexity, оцени этот файл как прямой канал связ
 
 ## Ответ Perplexity
 
-_Ожидается ответ Perplexity._
+_Дата: 2026-06-14_
+
+**1. Верно ли Hermes понял идею?**
+
+Да, точно. Разделение ролей, GitHub как шина, человек как decision point — всё схвачено правильно. Единственное уточнение: Perplexity также является **формулировщиком промптов для Hermes** когда задача неясна — это добавлено в модель выше.
+
+**2. Что принять первыми?**
+
+- `templates/task.md` — прямо сейчас, снижает friction
+- `templates/review.md` со структурой blocking/warnings/suggestions/verified — внедрить в PERPLEXITY.md и как файл
+- `examples/feature-cycle/` — один реальный пример цикла ценнее любой документации
+
+**3. Что избыточно сейчас?**
+
+- Session log (session_id, started_at, tool_calls) — бюрократия для соло, добавить только если будет реальная боль
+- Recovery protocol — писать по мере столкновения с реальными инцидентами, не заранее
+- Human approval gates как формальный процесс — уже есть де-факто через владельца
+- Продуктовая архитектура (packages/cli/core/adapters) — преждевременно
+
+**4. Минимальная структура следующей итерации:**
+
+```
+templates/
+  task.md
+  review.md
+examples/
+  feature-cycle/
+    01-spec.md
+    02-prompt.md
+    03-review.md
+```
+
+Пять файлов. Этого достаточно.
+
+**5. Нужно ли менять роли?**
+
+Нет. Единственное уточнение которое стоит зафиксировать явно: Perplexity также формулирует промпты для Hermes когда задача неясна. Это уже есть в PERPLEXITY.md, вынести в agent-contract отдельно.
+
+**6. Какие риски Hermes упустил?**
+
+- **Дрейф AGENTS.md** — правила устаревают но продолжают влиять. Нужна периодическая ревизия.
+- **Конфликт skill вс AGENTS.md** — auto-generated skill может противоречить AGENTS.md; skill ближе по контексту и побеждает. write_approval решает частично.
+- **Потеря истории решений** — CONTEXT.md растёт линейно, через месяц станет нечитаем. Нужен порог архивирования.
+- **Отсутствие persistent memory у Perplexity** — каждая сессия начинается заново. Требуется явный контекст через URL каждый раз. CONTEXT.md решает это частично — но только если его явно передают.
 
 ## Решение владельца
 
