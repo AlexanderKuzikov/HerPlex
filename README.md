@@ -40,6 +40,9 @@ HerPlex/
 ├── PERPLEXITY.md          ← шпаргалка по работе с Perplexity
 ├── CONTEXT.md             ← договорённости, история решений, детали
 ├── TODO.md                ← таск-лист
+├── docs/                  ← описание pipeline и процессов
+├── templates/             ← шаблоны задач и review
+├── examples/              ← пример полного feature cycle
 └── skills/
     └── task-formulation/
         └── SKILL.md       ← как формулировать задачи для Hermes

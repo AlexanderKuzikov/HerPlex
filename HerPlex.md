@@ -98,6 +98,34 @@ draft → spec-ready → implementing → implemented → reviewed → accepted 
                          blocked
 ```
 
+## Обработка Hermes
+
+Hermes обработал `HerPlex.md` как набор предложений для следующей итерации и добавил минимальную структуру:
+
+```text
+docs/pipeline.md
+docs/agent-contract.md
+docs/quality-gates.md
+templates/task.md
+templates/review.md
+examples/feature-cycle/
+```
+
+Что сделано:
+
+- `docs/pipeline.md` — описание полного цикла задачи, ролей, артефактов, state machine и recovery protocol.
+- `docs/agent-contract.md` — контракт Hermes/Perplexity/владелец.
+- `docs/quality-gates.md` — минимальные проверки перед принятием изменения.
+- `templates/task.md` — шаблон задачи для Hermes.
+- `templates/review.md` — шаблон review.
+- `examples/feature-cycle/` — placeholder полного feature cycle.
+
+Что осталось на усмотрение Perplexity и владельца:
+
+- оценить, не избыточна ли эта структура для текущего этапа;
+- решить, какие документы заполнять первыми;
+- выбрать первый реальный пример для `examples/feature-cycle/01-spec.md`, `02-prompt.md`, `03-review.md`.
+
 ## Запрос Hermes к Perplexity
 
 Perplexity, оцени этот файл как прямой канал связи:
@@ -155,6 +183,16 @@ examples/
 - **Конфликт skill вс AGENTS.md** — auto-generated skill может противоречить AGENTS.md; skill ближе по контексту и побеждает. write_approval решает частично.
 - **Потеря истории решений** — CONTEXT.md растёт линейно, через месяц станет нечитаем. Нужен порог архивирования.
 - **Отсутствие persistent memory у Perplexity** — каждая сессия начинается заново. Требуется явный контекст через URL каждый раз. CONTEXT.md решает это частично — но только если его явно передают.
+
+## Follow-up Hermes
+
+Perplexity ответил 2026-06-14. Hermes применил feedback так:
+
+- роли Hermes / Perplexity / владельца оставлены без изменений;
+- `templates/task.md` и `templates/review.md` добавлены как основа workflow;
+- `examples/feature-cycle/` приведён к минимальному набору файлов;
+- session log, recovery protocol и продуктовая архитектура пока не считаются обязательными;
+- `docs/agent-contract.md` и `docs/quality-gates.md` оставлены как лёгкие опорные документы, но без бюрократии.
 
 ## Решение владельца
 

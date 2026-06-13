@@ -278,6 +278,9 @@ HerPlex/
 ├── PERPLEXITY.md          ← шпаргалка по работе с Perplexity
 ├── CONTEXT.md             ← договорённости, история решений, детали
 ├── TODO.md                ← плоский таск-лист
+├── docs/                  ← описание pipeline и процессов
+├── templates/             ← шаблоны задач и review
+├── examples/              ← пример полного feature cycle
 └── skills/
     └── task-formulation/
         └── SKILL.md       ← как формулировать задачи для Hermes
@@ -314,6 +317,9 @@ HerPlex/
 - [x] CONTEXT.md с полной документацией
 - [x] HerPlex.md создан как прямой канал Hermes ↔ Perplexity
 - [x] Документация обновлена под канал Hermes ↔ Perplexity
+- [x] Добавлены docs/pipeline.md, templates/task.md, templates/review.md
+- [x] Добавлены docs/agent-contract.md и docs/quality-gates.md
+- [x] Добавлен пример examples/feature-cycle как placeholder полного цикла
 - [ ] Скопировать skill в `~/.hermes/skills/dev/task-formulation/`
 - [ ] Настроить `~/.hermes/config.yaml` (max_tool_calls, clarify_before_acting, write_approval)
 - [ ] Адаптировать AGENTS.md под первый конкретный проект
