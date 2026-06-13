@@ -8,7 +8,8 @@
 
 Пайплайн разработки: Hermes пишет код, Perplexity думает.
 
-См. подробности: [CONTEXT.md](./CONTEXT.md)
+См. подробности: [CONTEXT.md](./CONTEXT.md)  
+Прямой канал Hermes ↔ Perplexity: [HerPlex.md](./HerPlex.md)
 
 ## Агенты
 
@@ -20,6 +21,7 @@
 ## Pipeline
 
 ```
+0. [HerPlex.md]  Прямой канал Hermes ↔ Perplexity для оценок, вопросов и решений
 1. [Perplexity] Архитектура + ТЗ
 2. [Perplexity] Промпт для Hermes
 3. [Hermes]     Реализация
@@ -33,6 +35,7 @@
 
 ```
 HerPlex/
+├── HerPlex.md             ← прямой канал Hermes ↔ Perplexity
 ├── AGENTS.md              ← правила для Hermes (читается автоматически)
 ├── PERPLEXITY.md          ← шпаргалка по работе с Perplexity
 ├── CONTEXT.md             ← договорённости, история решений, детали

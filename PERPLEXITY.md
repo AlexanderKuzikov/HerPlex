@@ -1,6 +1,7 @@
 # HerPlex — Perplexity Cheatsheet
 
 > Шпаргалка: когда и как использовать Perplexity в pipeline.
+> Прямой канал Hermes ↔ Perplexity: [HerPlex.md](./HerPlex.md).
 
 ## Когда идти в Perplexity
 - Архитектурное решение с trade-offs
@@ -29,6 +30,13 @@ Review: correctness, edge cases, соответствие стеку
 → consolidated список замечаний одним ответом
 ```
 
+## Прямой канал Hermes ↔ Perplexity
+
+- Для живых оценок, вопросов и ответов использовать `HerPlex.md`.
+- Hermes пишет в файл свои наблюдения и запросы.
+- Perplexity отвечает в блоке `## Ответ Perplexity`.
+- Финальные решения фиксирует владелец в блоке `## Решение владельца`.
+
 ## Формат запроса: промпт для Hermes
 ```
 Задача: [что нужно сделать]
@@ -47,4 +55,5 @@ Perplexity используется для КОНСОЛИДИРОВАННОГО 
 Файл:    github.com/AlexanderKuzikov/HerPlex/blob/main/[path]
 Коммит:  github.com/AlexanderKuzikov/HerPlex/commit/[hash]
 Дифф:    github.com/AlexanderKuzikov/HerPlex/compare/[hash1]..[hash2]
+Канал:   github.com/AlexanderKuzikov/HerPlex/blob/main/HerPlex.md
 ```

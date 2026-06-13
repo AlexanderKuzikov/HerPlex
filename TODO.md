@@ -6,7 +6,11 @@
 
 ## Активные задачи
 
-<!-- Добавляй задачи сюда -->
+- [x] Создать `HerPlex.md` как прямой канал Hermes ↔ Perplexity
+- [x] Передать оценку Hermes в `HerPlex.md`
+- [x] Обновить README/CONTEXT/PERPLEXITY под новый канал
+- [ ] Дождаться ответа Perplexity в `HerPlex.md`
+- [ ] Принять решение владельцем в `HerPlex.md`
 
 ## Открытые вопросы (Hermes → Perplexity)
 

@@ -55,12 +55,26 @@
 
 ---
 
+## Прямой канал Hermes ↔ Perplexity
+
+Файл `HerPlex.md` — прямой и непосредственный канал связи между агентами.
+
+Использование:
+
+- Hermes пишет в `HerPlex.md` оценки, риски, идеи, вопросы и предложения.
+- Perplexity отвечает в блоке `## Ответ Perplexity`.
+- Владелец проекта принимает финальное решение в блоке `## Решение владельца`.
+- Файл не заменяет GitHub-ссылки на коммиты/диффы, а дополняет их живым контекстом.
+
+---
+
 ## Передача контекста через GitHub
 
 ```
 Файл:    github.com/AlexanderKuzikov/HerPlex/blob/main/[path]
 Коммит:  github.com/AlexanderKuzikov/HerPlex/commit/[hash]
 Дифф:    github.com/AlexanderKuzikov/HerPlex/compare/[hash1]..[hash2]
+Канал:   github.com/AlexanderKuzikov/HerPlex/blob/main/HerPlex.md
 ```
 
 Perplexity получает контекст через URL — не через copy-paste. Это исключает буфер обмена из процесса.
@@ -259,6 +273,7 @@ skills:
 
 ```
 HerPlex/
+├── HerPlex.md             ← прямой канал Hermes ↔ Perplexity
 ├── AGENTS.md              ← правила для Hermes (читается автоматически)
 ├── PERPLEXITY.md          ← шпаргалка по работе с Perplexity
 ├── CONTEXT.md             ← договорённости, история решений, детали
@@ -270,6 +285,7 @@ HerPlex/
 
 `AGENTS.md` — не трогать без явной причины, Hermes читает его каждую сессию.
 `CONTEXT.md` — обновлять после каждой сессии.
+`HerPlex.md` — прямой канал Hermes ↔ Perplexity; ответы Perplexity и решения владельца фиксируются там же.
 
 ---
 
@@ -278,6 +294,7 @@ HerPlex/
 | Дата | Решение | Причина |
 |---|---|---|
 | 2026-06-14 | GitHub как шина контекста между агентами | Единственный общий инструмент, audit trail, no extra infra |
+| 2026-06-14 | HerPlex.md как прямой канал Hermes ↔ Perplexity | Живой контекст для оценок, вопросов, ответов и решений без copy-paste |
 | 2026-06-14 | Без Issues/PR для соло-разработки | Оверинжиниринг для одного человека |
 | 2026-06-14 | AGENTS.md + PERPLEXITY.md + CONTEXT.md | Минимальный набор для сохранения контекста между сессиями |
 | 2026-06-14 | write_approval: true для Hermes skills | Контроль над auto-generated skills |
@@ -295,6 +312,8 @@ HerPlex/
 - [x] Skill task-formulation создан
 - [x] README.md с бэджиками
 - [x] CONTEXT.md с полной документацией
+- [x] HerPlex.md создан как прямой канал Hermes ↔ Perplexity
+- [x] Документация обновлена под канал Hermes ↔ Perplexity
 - [ ] Скопировать skill в `~/.hermes/skills/dev/task-formulation/`
 - [ ] Настроить `~/.hermes/config.yaml` (max_tool_calls, clarify_before_acting, write_approval)
 - [ ] Адаптировать AGENTS.md под первый конкретный проект
