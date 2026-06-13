@@ -1,51 +1,39 @@
 # Task Template
 
-Используй этот шаблон для задач Hermes.
+## Example — H-001
 
-```md
-# Task: [одна строка]
+Task: Заполнить `templates/review.md` рабочим шаблоном review для Perplexity.
 
-## Goal
+Modify:
+- `templates/review.md` — добавить минимальный review-шаблон.
 
-Что должно работать после выполнения.
+Read for context:
+- `PERPLEXITY.md` — роль Perplexity в review.
+- `CONTEXT.md` — требования к комментариям.
 
-## Modify
+Acceptance criteria:
+- [ ] 5 блоков: Blocking issues, Warnings, Suggestions, Verified, Not verified
+- [ ] В каждом блоке есть placeholder-пример
+- [ ] В шапке есть Коммит (URL), Дата, PR/Task
+- [ ] Не больше 50 строк
 
-- `path/to/file.md` — что изменить.
+Do NOT:
+- Не трогать другие файлы.
+- Не добавлять разделы по своему усмотрению.
 
-## Read for context
+Stop after: `templates/review.md` обновлён и запушен в `main`.
 
-- `path/to/context.md` — зачем читать.
+## Placeholder
 
-## Acceptance criteria
-
-- [ ] Критерий 1
-- [ ] Критерий 2
-- [ ] Edge case
-
-## Do NOT
-
-- Не менять ...
-- Не добавлять ...
-- Не запускать ...
-
-## Stop after
-
-Остановиться сразу после ...
-
-## Notes
-
-Заметки, ограничения, ссылки.
-```
-
-## Правило размера
-
-Одна задача = одно логическое изменение = один коммит.
-
-Разбить задачу, если:
-
-- затрагивает больше 3 файлов;
-- больше 5 acceptance criteria;
-- есть архитектурная неопределённость;
-- требуется установка зависимостей;
-- есть риск изменения публичного поведения.
+Task: [одна строка]
+Modify:
+- `[path]` — [что изменить].
+Read for context:
+- `[path]` — [зачем читать].
+Acceptance criteria:
+- [ ] [критерий 1]
+- [ ] [критерий 2]
+Do NOT:
+- [запрет 1]
+- [запрет 2]
+Stop after: [точка остановки].
