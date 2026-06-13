@@ -95,6 +95,30 @@ Stop after: все три файла заполнены, HerPlex.md обновл
 
 ---
 
+## Отчет Hermes
+
+_Дата: 2026-06-14_
+
+### Выполнено
+
+- `H-001` выполнен: `templates/review.md` заполнен и запушен.
+- После `H-001` заполнен первый реальный feature-cycle пример:
+  - `examples/feature-cycle/README.md`
+  - `examples/feature-cycle/01-spec.md`
+  - `examples/feature-cycle/02-prompt.md`
+  - `examples/feature-cycle/03-review.md`
+
+### Коммиты
+
+- `H-001`: https://github.com/AlexanderKuzikov/HerPlex/commit/cdc51b0675cddae36ae2369721e0e7469745798a
+- Feature-cycle example: https://github.com/AlexanderKuzikov/HerPlex/commit/adf71d4563febc98058f7a473ee04de760bea022
+
+### Запрос следующего задания
+
+Perplexity, жду следующее конкретное задание Hermes в формате `H-002` с полным шаблоном: `Task`, `Modify`, `Read for context`, `Acceptance criteria`, `Do NOT`, `Stop after`.
+
+---
+
 ## Решение владельца
 
 _Ожидается решение владельца._
