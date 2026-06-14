@@ -1,66 +1,41 @@
 # HerPlex
 
-![Pipeline](https://img.shields.io/badge/pipeline-spec--driven-blue?style=flat-square)
-![Hermes](https://img.shields.io/badge/agent-Hermes%20%2B%20Nex%20N2%20Pro-orange?style=flat-square)
-![Perplexity](https://img.shields.io/badge/review-Claude%20Sonnet%204.6-8A2BE2?style=flat-square)
-![Stack](https://img.shields.io/badge/stack-Node.js%20%7C%20TypeScript%20%7C%20PHP%20%7C%20Python-3178C6?style=flat-square)
-![License](https://img.shields.io/github/license/AlexanderKuzikov/HerPlex?style=flat-square)
+> Multi-agent workflow: Perplexity × Hermes × Human
 
-Пайплайн разработки: Hermes пишет код, Perplexity думает.
+[![methodology](https://img.shields.io/badge/type-methodology-blue)](https://github.com/AlexanderKuzikov/HerPlex)
+[![status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/AlexanderKuzikov/HerPlex)
+[![agents](https://img.shields.io/badge/agents-Perplexity%20%2B%20Hermes-purple)](https://github.com/AlexanderKuzikov/HerPlex)
 
-См. подробности: [CONTEXT.md](./CONTEXT.md)  
-Прямой канал Hermes ↔ Perplexity: [HerPlex.md](./HerPlex.md)
+HerPlex — методология асинхронной multi-agent разработки. Три участника работают асинхронно через GitHub — каждый в своей роли, без постоянного присутствия друг друга.
 
-## Агенты
+## Участники
 
-| Агент | Роль |
-|---|---|
-| Perplexity / Claude Sonnet 4.6 | Архитектура, ТЗ, code review |
-| Hermes + Nex N2 Pro | Реализация, рутина, фиксы |
+| Роль | Инструмент | Функция |
+|------|------------|----------|
+| Архитектор | Perplexity / Claude Sonnet | ТЗ, архитектура, review, формулировка заданий |
+| Исполнитель | Hermes / Nex N2 Pro | Реализация, документация, рутина |
+| Decision point | Владелец проекта | Принятие финальных решений |
+| Шина | GitHub | Общая память, audit trail, асинхронный канал |
 
-## Pipeline
+## Канал связи
 
-```
-0. [HerPlex.md]  Прямой канал Hermes ↔ Perplexity для оценок, вопросов и решений
-1. [Perplexity] Архитектура + ТЗ
-2. [Perplexity] Промпт для Hermes
-3. [Hermes]     Реализация
-4. [Ты]         Тесты
-5a. Баг очевиден → [Hermes] фикс
-5b. Архитектурные сомнения → [Perplexity] review → [Hermes] фикс
-6. Финал
-```
+[HerPlex.md](./HerPlex.md) — прямой канал Hermes ↔ Perplexity. Все задания, отчёты и решения хранятся здесь.
 
-## Прогресс проекта
-
-HerPlex пока не продукт. Это pipeline/каркас для взаимодействия Hermes, Perplexity и владельца.
-
-Прогресс на GitHub:
-
-- [x] Идея и роли Hermes / Perplexity / владельца зафиксированы.
-- [x] Создан прямой канал `HerPlex.md`.
-- [x] Perplexity ответила на первый запрос Hermes и дала feedback.
-- [x] Feedback Perplexity учтён в структуре проекта.
-- [x] Добавлены `docs/`, `templates/`, `examples/`.
-- [x] Добавлены `templates/task.md` и `templates/review.md`.
-- [x] Добавлен placeholder `examples/feature-cycle/`.
-- [ ] Выбрать и заполнить первый реальный feature cycle.
-- [ ] Решить, оставлять ли `docs/agent-contract.md` и `docs/quality-gates.md` как обязательные документы.
-- [ ] Скопировать `skills/task-formulation/SKILL.md` в локальный Hermes skill.
-
-## Структура репо
+## Структура
 
 ```
-HerPlex/
-├── HerPlex.md             ← прямой канал Hermes ↔ Perplexity
-├── AGENTS.md              ← правила для Hermes (читается автоматически)
-├── PERPLEXITY.md          ← шпаргалка по работе с Perplexity
-├── CONTEXT.md             ← договорённости, история решений, детали
-├── TODO.md                ← таск-лист
-├── docs/                  ← описание pipeline и процессов
-├── templates/             ← шаблоны задач и review
-├── examples/              ← пример полного feature cycle
-└── skills/
-    └── task-formulation/
-        └── SKILL.md       ← как формулировать задачи для Hermes
+docs/
+  pipeline.md          — полный цикл задачи
+  agent-contract.md    — контракт ролей
+  quality-gates.md     — проверки перед принятием
+  new-project.md       — инструкция запуска нового проекта
+templates/
+  task.md              — шаблон задания для Hermes
+  review.md            — шаблон review для Perplexity
+examples/
+  feature-cycle/       — пример полного цикла
 ```
+
+## Быстрый старт нового проекта
+
+См. [docs/new-project.md](./docs/new-project.md)
