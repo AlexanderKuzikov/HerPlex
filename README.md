@@ -1,41 +1,34 @@
-# HerPlex
+<p align="center">
+  <a href="https://github.com/AlexanderKuzikov/HerPlex/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Apache--2.0-blue"></a>
+</p>
 
-> Multi-agent workflow: Perplexity × Hermes × Human
+<h1 align="center">HerPlex</h1>
+<p align="center">Multi-agent workflow: Perplexity думает, Hermes пишет, Human управляет</p>
 
-[![methodology](https://img.shields.io/badge/type-methodology-blue)](https://github.com/AlexanderKuzikov/HerPlex)
-[![status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/AlexanderKuzikov/HerPlex)
-[![agents](https://img.shields.io/badge/agents-Perplexity%20%2B%20Hermes-purple)](https://github.com/AlexanderKuzikov/HerPlex)
+---
 
-HerPlex — методология асинхронной multi-agent разработки. Три участника работают асинхронно через GitHub — каждый в своей роли, без постоянного присутствия друг друга.
+Методология multi-agent workflow: Perplexity выполняет исследование, Hermes генерирует текст, человек управляет процессом и принимает решения.
 
-## Участники
+- **Perplexity** — web-research и сбор актуальной информации.
+- **Hermes** — локальный агент для генерации и записи.
+- **Human-in-the-loop** — человек контролирует и направляет.
 
-| Роль | Инструмент | Функция |
-|------|------------|----------|
-| Архитектор | Perplexity / Claude Sonnet | ТЗ, архитектура, review, формулировка заданий |
-| Исполнитель | Hermes / Nex N2 Pro | Реализация, документация, рутина |
-| Decision point | Владелец проекта | Принятие финальных решений |
-| Шина | GitHub | Общая память, audit trail, асинхронный канал |
+## Быстрый старт
 
-## Канал связи
-
-[HerPlex.md](./HerPlex.md) — прямой канал Hermes ↔ Perplexity. Все задания, отчёты и решения хранятся здесь.
-
-## Структура
-
-```
-docs/
-  pipeline.md          — полный цикл задачи
-  agent-contract.md    — контракт ролей
-  quality-gates.md     — проверки перед принятием
-  new-project.md       — инструкция запуска нового проекта
-templates/
-  task.md              — шаблон задания для Hermes
-  review.md            — шаблон review для Perplexity
-examples/
-  feature-cycle/       — пример полного цикла
+```bash
+git clone https://github.com/AlexanderKuzikov/HerPlex.git
+cd HerPlex
 ```
 
-## Быстрый старт нового проекта
+## Документация
 
-См. [docs/new-project.md](./docs/new-project.md)
+- [`docs/CONTEXT.md`](docs/CONTEXT.md) — состояние проекта
+- [`docs/DECISIONS.md`](docs/DECISIONS.md) — архитектурные решения
+
+## Статус
+
+**Методология** — документация и описание процесса.
+
+## Лицензия
+
+[Apache-2.0](LICENSE) © Alexander Kuzikov
